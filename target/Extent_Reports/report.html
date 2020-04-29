@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Expedia - Cucumber Framework</title>
+
+	<style type='text/css'>
+			
+            
+
+      
+        
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Expedia - Cucumber Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Apr 28, 2020 10:05:19 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.2</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@FlightSearch</a></li>
+					<li><a href='#'>@login</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>32</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Flight Search Feature</span>
+						<span class='test-time'>Apr 28, 2020 10:05:20 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 1m 6s+492ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify That User is Able to Search Same Destination Flights</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I am on Home page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on Flights Tab</span>
+				<div class='pre'>Clicking on Accept Tab : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //span[@class='button-text']]<br></div>
+				<div class='pre'>Clicking on Flights Tab : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //span[contains(text(),'Flights')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter origin city "London"</span>
+				<div class='pre'>Entering Origin City : London On Flying from field [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //input[@id='flight-origin-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter destination city "Delhi"</span>
+				<div class='pre'>Entering Destination City : Delhi On Destination field [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //input[@id='flight-origin-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter outbound date of travel "07/08/2020"</span>
+				<div class='pre'>Entering Departure date : 07/08/2020 Departing Date [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //input[@id='flight-departing-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter return travel date "21/08/2020"</span>
+				<div class='pre'>Entering Returning date : 21/08/2020 Returning Date [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //input[@id='flight-returning-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I add no travellers</span>
+				<div class='pre'>Clicking  on Travellers Button : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //div[@class='menu-bar gcw-travel-selector-wrapper']//button[@class='trigger-utility menu-trigger btn-utility btn-secondary dropdown-toggle theme-standard pin-left menu-arrow gcw-component gcw-traveler-amount-select gcw-component-initialized']]<br></div>
+				<div class='pre'>Clicking  on No of Adults Button  : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //body[contains(@class,'')]/meso-native-marquee/section[@id='WizardHero']/div[@id='hero-banner']/div[contains(@class,'hero-banner-gradient native-marquee')]/div[contains(@class,'cols-row hero-banner-inner')]/section[@id='wizardSection']/div[contains(@class,'hero-banner-box siteId-3 cf hideClassicDcol')]/div[@id='wizard-tabs']/div[contains(@class,'tabs-container col')]/section[@id='section-flight-tab-hp']/form[@id='gcw-flights-form-hp-flight']/fieldset[contains(@class,'room-data')]/div[contains(@class,'cols-nested')]/div[contains(@class,'ab25184-traveler-wrapper-flight available-for-flights gcw-clear-both')]/div[@id='traveler-selector-hp-flight']/div[contains(@class,'menu-bar gcw-travel-selector-wrapper')]/ul[contains(@class,'menu-bar-inner')]/li[contains(@class,'open')]/div[contains(@class,'menu sticky gcw-menu')]/div[contains(@class,'menu-main')]/div[contains(@class,'traveler-selector-sinlge-room-data traveler-selector-room-data')]/div[contains(@class,'uitk-grid step-input-outside gcw-component gcw-component-step-input gcw-step-input gcw-component-initialized')]/div[contains(@class,'uitk-col all-col-shrink')]/button[contains(@class,'uitk-step-input-button uitk-step-input-plus')]/span[1]//*[local-name()='svg']]<br></div>
+				<div class='pre'>Clicking  on Close Button  : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //li[contains(@class,'open')]//button[contains(@class,'close btn-text')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on search button</span>
+				<div class='pre'>Clicking  on Seacrch Button   : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //form[@id='gcw-flights-form-hp-flight']//button[contains(@class,'btn-primary btn-action gcw-submit')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='11' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I must see flights to the same destination</span>
+				<div class='pre'>Verify Destination City Message  : [[ChromeDriver: chrome on WINDOWS (7bedb6153a2a018c5e1d97716837216b)] -> xpath: //span[@class='title-city-text']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='12' status='pass'>
+	<span class='duration right label'>0h 1m 4s+160ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify That User is NOT Able to Search Wrong Destination Flights</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='13' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I am on Home page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='14' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I click on Flights Tab</span>
+				<div class='pre'>Clicking on Accept Tab : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //span[@class='button-text']]<br></div>
+				<div class='pre'>Clicking on Flights Tab : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //span[contains(text(),'Flights')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='15' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter origin city "Washington"</span>
+				<div class='pre'>Entering Origin City : Washington On Flying from field [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //input[@id='flight-origin-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter destination city "Mount Gambier"</span>
+				<div class='pre'>Entering Destination City : Mount Gambier On Destination field [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //input[@id='flight-origin-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter outbound date of travel "07/08/2020"</span>
+				<div class='pre'>Entering Departure date : 07/08/2020 Departing Date [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //input[@id='flight-departing-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter return travel date "21/08/2020"</span>
+				<div class='pre'>Entering Returning date : 21/08/2020 Returning Date [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //input[@id='flight-returning-hp-flight']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='19' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I add no travellers</span>
+				<div class='pre'>Clicking  on Travellers Button : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //div[@class='menu-bar gcw-travel-selector-wrapper']//button[@class='trigger-utility menu-trigger btn-utility btn-secondary dropdown-toggle theme-standard pin-left menu-arrow gcw-component gcw-traveler-amount-select gcw-component-initialized']]<br></div>
+				<div class='pre'>Clicking  on No of Adults Button  : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //body[contains(@class,'')]/meso-native-marquee/section[@id='WizardHero']/div[@id='hero-banner']/div[contains(@class,'hero-banner-gradient native-marquee')]/div[contains(@class,'cols-row hero-banner-inner')]/section[@id='wizardSection']/div[contains(@class,'hero-banner-box siteId-3 cf hideClassicDcol')]/div[@id='wizard-tabs']/div[contains(@class,'tabs-container col')]/section[@id='section-flight-tab-hp']/form[@id='gcw-flights-form-hp-flight']/fieldset[contains(@class,'room-data')]/div[contains(@class,'cols-nested')]/div[contains(@class,'ab25184-traveler-wrapper-flight available-for-flights gcw-clear-both')]/div[@id='traveler-selector-hp-flight']/div[contains(@class,'menu-bar gcw-travel-selector-wrapper')]/ul[contains(@class,'menu-bar-inner')]/li[contains(@class,'open')]/div[contains(@class,'menu sticky gcw-menu')]/div[contains(@class,'menu-main')]/div[contains(@class,'traveler-selector-sinlge-room-data traveler-selector-room-data')]/div[contains(@class,'uitk-grid step-input-outside gcw-component gcw-component-step-input gcw-step-input gcw-component-initialized')]/div[contains(@class,'uitk-col all-col-shrink')]/button[contains(@class,'uitk-step-input-button uitk-step-input-plus')]/span[1]//*[local-name()='svg']]<br></div>
+				<div class='pre'>Clicking  on Close Button  : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //li[contains(@class,'open')]//button[contains(@class,'close btn-text')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='20' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on search button</span>
+				<div class='pre'>Clicking  on Seacrch Button   : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //form[@id='gcw-flights-form-hp-flight']//button[contains(@class,'btn-primary btn-action gcw-submit')]]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I must get No flights message between the cities</span>
+				<div class='pre'>Verify Error Message   : [[ChromeDriver: chrome on WINDOWS (70638229c5cb3cebc3ddc23274e1a9a9)] -> xpath: //div[@class='bold announce-able']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>Login feature</span>
+						<span class='test-time'>Apr 28, 2020 10:07:33 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='23' status='pass'>
+	<span class='duration right label'>0h 0m 26s+592ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User should login successfully with valid credentials</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='24' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I am on Home page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I clickOnAccountTab</span>
+				<div class='pre'>Clicking on Accept Tab : [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> xpath: //span[@class='button-text']]<br></div>
+				<div class='pre'>Clicking on Account Tab : [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> xpath: //button[@id='header-account-menu']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I clickOnSignInTab</span>
+				<div class='pre'>Clicking on Sign In Tab : [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> xpath: //button[@id='header-account-signin-button']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter valid Email "JamesB1234@gmail.com"</span>
+				<div class='pre'>Entering Email Id : JamesB1234@gmail.com [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> id: gss-signin-email]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter valid password "James123"</span>
+				<div class='pre'>Entering Password  : James123 [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> id: gss-signin-password]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='29' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on login button</span>
+				<div class='pre'>Clicking on Sign In Button  : [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> id: gss-signin-submit]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='30' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I should login successfully</span>
+				<div class='pre'>Verify My List Tab Message  : My Lists [[ChromeDriver: chrome on WINDOWS (b2c467aef938da4cf45e5809c42e9fb3)] -> xpath: //span[@class='sp-name']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='31' status='pass'>
+	<span class='duration right label'>0h 0m 24s+610ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User should Not login successfully with invalid credentials</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='32' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I am on Home page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='33' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I clickOnAccountTab</span>
+				<div class='pre'>Clicking on Accept Tab : [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> xpath: //span[@class='button-text']]<br></div>
+				<div class='pre'>Clicking on Account Tab : [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> xpath: //button[@id='header-account-menu']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='34' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I clickOnSignInTab</span>
+				<div class='pre'>Clicking on Sign In Tab : [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> xpath: //button[@id='header-account-signin-button']]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='35' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter valid Email "RogerB1234@gmail.com"</span>
+				<div class='pre'>Entering Email Id : RogerB1234@gmail.com [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> id: gss-signin-email]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='36' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I enter valid password "Roger123"</span>
+				<div class='pre'>Entering Password  : Roger123 [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> id: gss-signin-password]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='37' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on login button</span>
+				<div class='pre'>Clicking on Sign In Button  : [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> id: gss-signin-submit]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='38' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I should Not login successfully</span>
+				<div class='pre'>Verify Error Message  : You may have entered an unknown email address or an incorrect password [[ChromeDriver: chrome on WINDOWS (136af0c4dd531d7b36670bf30c4f6dc0)] -> id: gss-signin-incorrect-email-or-password]<br></div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@FlightSearch</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apr 28, 2020 10:05:20 AM</td>
+										<td class='linked' test-id='1'>Flight Search Feature</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@login</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apr 28, 2020 10:07:33 AM</td>
+										<td class='linked' test-id='22'>Login feature</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>BestinTesting</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>4</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 4</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:05:20 AM</td>
+                                                <td class='linked' test-id='2'>Flight Search Feature.Verify That User is Able to Search Same Destination Flights</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:06:28 AM</td>
+                                                <td class='linked' test-id='12'>Flight Search Feature.Verify That User is NOT Able to Search Wrong Destination Flights</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:07:33 AM</td>
+                                                <td class='linked' test-id='23'>Login feature.User should login successfully with valid credentials</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:08:01 AM</td>
+                                                <td class='linked' test-id='31'>Login feature.User should Not login successfully with invalid credentials</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>BhaveshPatel</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>4</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 4</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:05:20 AM</td>
+                                                <td class='linked' test-id='2'>Flight Search Feature.Verify That User is Able to Search Same Destination Flights</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:06:28 AM</td>
+                                                <td class='linked' test-id='12'>Flight Search Feature.Verify That User is NOT Able to Search Wrong Destination Flights</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:07:33 AM</td>
+                                                <td class='linked' test-id='23'>Login feature.User should login successfully with valid credentials</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apr 28, 2020 10:08:01 AM</td>
+                                                <td class='linked' test-id='31'>Login feature.User should Not login successfully with invalid credentials</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>2</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>32</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Apr 28, 2020 10:05:19 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Apr 28, 2020 10:08:27 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>187,050ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>User Name</td>
+								<td>anushk</td>
+							</tr>
+							<tr>
+								<td>Time Zone</td>
+								<td>Europe/London</td>
+							</tr>
+							<tr>
+								<td>Machine</td>
+								<td>Windows 1064 Bit</td>
+							</tr>
+							<tr>
+								<td>Selenium</td>
+								<td>3.141.59</td>
+							</tr>
+							<tr>
+								<td>Maven</td>
+								<td>3.5.2</td>
+							</tr>
+							<tr>
+								<td>Java Version</td>
+								<td>1.8.0_151</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@FlightSearch</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@login</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 4,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 32,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+            
+        $(document).ready(function() {
+
+        });
+      
+        
+ 		</script>
+	</body>
+	
+</html>
